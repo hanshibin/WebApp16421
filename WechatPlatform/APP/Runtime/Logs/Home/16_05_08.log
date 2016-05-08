@@ -1,0 +1,23 @@
+[ 2016-05-08T18:00:23+08:00 ] 140.207.54.76 /WechatPlatform/index.php/Home/Index/index?signature=db773e4f9decc557b95b94b80ed5a2e7369684f8&timestamp=1462701623&nonce=1938564186
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001645s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 208 行.
+NOTIC: [8] Undefined index: echostr D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 16 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001706s ]
+
+[ 2016-05-08T18:00:25+08:00 ] 140.207.54.76 /WechatPlatform/index.php/Home/Index/index?signature=2bd3976861253cc2586a0024fdaf53cf6d3d3a14&timestamp=1462701625&nonce=1907984150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 208 行.
+NOTIC: [8] Undefined index: echostr D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 16 行.
+

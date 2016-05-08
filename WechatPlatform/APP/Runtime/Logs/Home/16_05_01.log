@@ -1,0 +1,13 @@
+[ 2016-05-01T22:14:24+08:00 ] 58.247.206.153 /WechatPlatform/index.php/Home/Index/index?signature=606c0cd9407ee032635e7a2fe0a1f59d57305a65&timestamp=1462112064&nonce=1893159450&encrypt_type=aes&msg_signature=1a11e84f2ada2ea042b6f937d0dde9e87ce59075
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with that of Think\Controller::show() D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 185 行.
+NOTIC: [8] Undefined index: echostr D:\wamp\www\WechatPlatform\APP\Home\Controller\IndexController.class.php 第 16 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001141s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001410s ]
+
