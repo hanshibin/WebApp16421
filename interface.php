@@ -29,7 +29,7 @@ class wechat {
 
 
   $msgType = "text";
-	$contentStr = "Hello";
+	$contentStr = "Hello " + $fromUsername;
 	if ($keyword == "Time" || $keyword == "time")
 	{
 		$contentStr = date("Y-m-d H:i:s",time());
