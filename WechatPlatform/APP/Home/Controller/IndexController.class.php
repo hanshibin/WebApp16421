@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+
+include_once dirname(__FILE__).'/wclog.php';
 class IndexController extends Controller {
 	var $_tokenItem;
 	var $_getTokenTime;
@@ -9,7 +11,6 @@ class IndexController extends Controller {
 	}
 
     public function index(){
-		
     	$nonce = $_GET['nonce'];
     	$token = 'Webchat16421';
     	$timestamp = $_GET['timestamp'];
@@ -36,6 +37,7 @@ class IndexController extends Controller {
     }
 
 	public function create_menu(){
+		$baseUrl="http://139.196.11.31/WechatPlatform/index.php/Home/";
 		$data = '{
 					 "button":[
 					{	
@@ -52,14 +54,13 @@ class IndexController extends Controller {
 						"name":"About Me",
 						"sub_button":[
 						{	
-						   "type":"click",
-						   "name":"Register",
-						   "key":"V_REGISTER"
+						   "type":"view",
+						   "name":"Register",		  						   					"url":"http://139.196.11.31/WechatPlatform/index.php/Home/Index/register.html"
 						},
 						{
-						   "type":"click",
+						   "type":"view",
 						   "name":"Log on",
-						   "key":"V_LOGON"
+						   "url":"http://139.196.11.31/WechatPlatform/index.php/Home/Index/logon.html"
 						}]
 					}]
 				 }';
@@ -106,6 +107,35 @@ class IndexController extends Controller {
 
 	}
 	
+
+	public function RegisterUser($userId){
+		LogInfo($userId);
+		$tempuser = $userId;
+		$Dao = M("User");
+		LogInfo("2-------------");
+		$condition = array($userId => 'WeChatUserid');
+		LogInfo("start quert-------------");
+		$result = $Dao->where($condition)->find();
+		LogInfo("3-------------");
+		if( !(is_array($result) && count($result)>0))
+		{ 
+			LogInfo($tempuser);
+ 			$data["WeChatUserid"] = "oOWUawyq2URelUvc8lxKOPgNx2qE";
+ 			$data["Password"] = "123456";
+ 			$data["Time"] = time();
+
+			if($lastInsId = $Dao->add($data)){
+        	 		LogInfo("insert user id is $lastInsId");
+	 		} 
+			else
+			{
+				LogInfo("insert user falied");
+			}
+		}
+		LogInfo("5-------------");
+
+	}
+
     public function responseMsg(){
 
     	$postArr = $GLOBALS['HTTP_RAW_POST_DATA'];
@@ -137,8 +167,12 @@ class IndexController extends Controller {
     					$content = "Message!";
     					break;
     				case 'V_REGISTER':
-    					//$content = "Register!";
-    					$this->redirect("http://www.baidu.com");
+    					$content = "Register!";
+    					//$this->redirect("http://www.baidu.com");
+					LogInfo("before call RegisterUser");
+					$this->RegisterUser($toUser);
+					LogInfo("After call RegisterUser");
+					$this->redirect("/Index/index.html");
     					break;
     				case 'V_LOGON':
     					$content = "Logon!";
